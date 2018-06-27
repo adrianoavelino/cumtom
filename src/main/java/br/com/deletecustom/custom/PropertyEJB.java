@@ -21,8 +21,15 @@ public class PropertyEJB {
     @Resource(name="properties/example")
     private Properties properties;
     
+    @Resource(lookup = "string/Example")
+    private String value;
+
     public String getProp1() {
         return properties.getProperty("prop1");
+    }
+
+    public String getValue() {
+        return this.value;
     }
 
 }

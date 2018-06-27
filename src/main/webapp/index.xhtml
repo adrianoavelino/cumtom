@@ -14,6 +14,11 @@
                              ajax="false"
                              update="msg"
                              actionListener="#{bean.jndi()}" /> <br />
+            <h:outputText id="msg2" value="#{bean.myValue}" /> <br />
+            <p:commandButton value="Get String value from server"
+                             ajax="false"
+                             update="msg2"
+                             actionListener="#{bean.pegaString()}" /> <br />
         </h:form>
         
     </h:body>

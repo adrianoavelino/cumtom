@@ -25,9 +25,18 @@ public class PropertyBean {
     @Inject
     private PropertyEJB properties;
     private String myProperty;
+    private String myValue;
 
     public String getMyProperty() {
         return myProperty;
+    }
+
+    public String getMyValue() {
+        return myValue;
+    }
+
+    public void setMyValue(String myValue) {
+        this.myValue = myValue;
     }
 
     public void setMyProperty(String myProperty) {
@@ -35,8 +44,11 @@ public class PropertyBean {
     }
     
     public void jndi() {
-        String myProp1 = properties.getProp1();
-        this.setMyProperty(myProp1);
+        this.setMyProperty(properties.getProp1());
     }
 
+    public void pegaString() {
+        this.setMyValue(properties.getValue());
+        System.out.println("String = " + this.getMyValue());
+    }
 }
