@@ -24,9 +24,19 @@ public class PropertyBean {
     
     @Inject
     private PropertyEJB properties;
+    private String myProperty;
+
+    public String getMyProperty() {
+        return myProperty;
+    }
+
+    public void setMyProperty(String myProperty) {
+        this.myProperty = myProperty;
+    }
     
     public void jndi() {
-        System.out.println(properties.getProp1());
+        String myProp1 = properties.getProp1();
+        this.setMyProperty(myProp1);
     }
 
 }

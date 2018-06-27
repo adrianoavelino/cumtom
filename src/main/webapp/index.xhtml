@@ -5,11 +5,15 @@
       xmlns:p="http://primefaces.org/ui"
       >
     <h:head>
-        <title>Facelet Title</title>
+        <title>Custom properties</title>
     </h:head>
     <h:body>
-        <h:form>
-            <p:commandButton value="botao" actionListener="#{bean.jndi()}" />
+        <h:form id="form">
+            <h:outputText id="msg" value="#{bean.myProperty}" /> <br />
+            <p:commandButton value="Get property prop1 from server"
+                             ajax="false"
+                             update="msg"
+                             actionListener="#{bean.jndi()}" /> <br />
         </h:form>
         
     </h:body>
